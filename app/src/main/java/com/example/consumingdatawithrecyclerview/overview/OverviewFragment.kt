@@ -31,6 +31,9 @@ class OverviewFragment : Fragment() {
         //binding viewmodel
         binding.viewModel = viewModel
 
+        //binding adapter
+        binding.galleryImagesRv.adapter = GalleryImageAdapter()
+
         return binding.root
     }
 

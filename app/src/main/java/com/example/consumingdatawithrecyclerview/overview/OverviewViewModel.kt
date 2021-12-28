@@ -11,8 +11,8 @@ import java.lang.Exception
 
 class OverviewViewModel: ViewModel(){
 
-    private val _image = MutableLiveData<Image>()
-    val image: LiveData<Image> = _image
+    private val _images = MutableLiveData<List<Image>>()
+    val images: LiveData<List<Image>> = _images
 
     private val _response = MutableLiveData<String>()
     val response: LiveData<String> = _response
@@ -27,9 +27,8 @@ class OverviewViewModel: ViewModel(){
             try {
                 val listResult = ImageGalleryApi.retrofitService.getGalleryImages()
                 _response.value = "Success: Image gallery return ${listResult.size} images."
-                if(listResult.size > 0 ){
-                    _image.value = listResult[0]
-                }
+                _images.value = listResult
+
             } catch (e: Exception) {
                 _response.value = "Failure: ${e.message}"
             }

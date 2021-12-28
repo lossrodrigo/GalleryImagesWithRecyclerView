@@ -17,28 +17,20 @@
         android:layout_height="match_parent"
         tools:context=".overview.OverviewFragment">
 
-        <ImageView
-            android:id="@+id/imageIv"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:imageUrl="@{viewModel.image.download_url}"/>
-       <!--
-       <TextView
-            android:id="@+id/returnApiDataTv"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:padding="8dp"
-            android:textSize="18sp"
-            tools:text="Will show the API return"
-            android:text="@{viewModel.image.url}"/>
-            -->
 
+       <androidx.recyclerview.widget.RecyclerView
+           android:id="@+id/galleryImagesRv"
+           android:layout_width="0dp"
+           android:layout_height="0dp"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintTop_toTopOf="parent"
+           app:layout_constraintBottom_toBottomOf="parent"
+           app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+           app:spanCount="2"
+           tools:itemCount="16"
+           tools:listitem="@layout/item_list"
+           app:listData="@{viewModel.images}"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
 
