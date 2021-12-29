@@ -1,3 +1,17 @@
 # GalleryImagesWithRecyclerView
+:flushed: This app shows a recyclerView grid list with images from Picsum Photos API
 
-This app shows a recyclerView grid list with images from Picsum Photos API using retrofit, moshi and Glide.
+:house_with_garden: Architeture Components
+  - MVVM
+  - View Model Scope (coroutine scope)
+  - Live Data
+  - Data Binding
+  - Fragments
+
+:receipt: Layout:
+- RecyclerView using Diffutil
+
+:books: Third-party libraries used:
+  - Retrofit
+  - Moshi
+  - Glide
